@@ -1,0 +1,14 @@
+.container {
+    padding: 30px 60px 0px 60px;
+}
+.btn-wrapper {
+    display: inline;
+    
+}
+.btn-card {
+    width: 50%;
+    margin: 10px;
+}
+.btn-card button {
+    margin: 10px;
+}

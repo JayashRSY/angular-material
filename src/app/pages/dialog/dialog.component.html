@@ -1,0 +1,64 @@
+<div class="container">
+    <h2>Dialog</h2>
+    <mat-divider> </mat-divider>
+    <div class="wrapper mt-3">
+        <div class="row">
+            <div class="col-6">
+                <mat-card class="bg-app mat-elecation-z6">
+                    <h3>Simple Dialog</h3>
+                    <button mat-raised-button color="primary" (click)="openDialog1()">Open Dialog</button>
+                </mat-card>
+            </div>
+            <div class="col-6">
+                <mat-card class="bg-app mat-elecation-z6">
+                    <h3>Scroll Dialog</h3>
+                    <button mat-raised-button color="primary" (click)="openDialog2()">Open Dialog</button>
+                </mat-card>
+            </div>
+            <div class="col-6">
+                <mat-card class="bg-app mat-elecation-z6">
+                    <h3>Dialog with data</h3>
+                    <ol>
+                        <li>
+                            <mat-form-field appearance="fill">
+                                <mat-label>What's your name?</mat-label>
+                                <input matInput [(ngModel)]="name">
+                            </mat-form-field>
+                        </li>
+                        <li>
+                            <button mat-raised-button (click)="openDialog3()">Pick one</button>
+                        </li>
+                        <li *ngIf="animal">
+                            You chose: <i>{{animal}}</i>
+                        </li>
+                    </ol>
+                </mat-card>
+            </div>
+            <div class="col-6">
+                <mat-card class="bg-app mat-elecation-z6">
+                    <h3>Global prompt dialog</h3>
+                    <ol>
+                        <li>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Prompt Title</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </li>
+                        <li>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Prompt Text</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                        </li>
+                        <li>
+                            <button mat-raised-button (click)="openDialog4()">Pick one</button>
+                        </li>
+                        <li *ngIf="promptResult">
+                            You chose: <i>{{promptResult}}</i>
+                        </li>
+                    </ol>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

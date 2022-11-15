@@ -1,0 +1,113 @@
+<div class="container">
+    <h2>Menu</h2>
+    <mat-divider></mat-divider>
+    <div class="content">
+        <div class="row">
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="menu1">Menu</button>
+                <mat-menu #menu1="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="menu2">Icon Menu</button>
+                <mat-menu #menu2="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>blur_on</mat-icon>Item 1
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>blur_on</mat-icon>Item 2
+                    </button>
+                </mat-menu>
+            </div>
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="menu3">Nested Menu</button>
+                <mat-menu #menu3="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item [matMenuTriggerFor]="nestedMenu1">Item 2</button>
+                    <button mat-menu-item>Item 3</button>
+                </mat-menu>
+                <mat-menu #nestedMenu1="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                    <button mat-menu-item [matMenuTriggerFor]="nestedNestedMenu1">Item 3</button>
+                </mat-menu>
+                <mat-menu #nestedNestedMenu1="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                    <button mat-menu-item>Item 3</button>
+                </mat-menu>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <h2>Position</h2>
+    <mat-divider></mat-divider>
+    <div class="content">
+        <div class="row">
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="after">After</button>
+                <mat-menu #after="matMenu" xPosition="after">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="before">Before</button>
+                <mat-menu #before="matMenu" xPosition="before">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="above">Above</button>
+                <mat-menu #above="matMenu" yPosition="above">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="below">Below</button>
+                <mat-menu #below="matMenu" yPosition="below">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <h2>Passing Data</h2>
+    <mat-divider></mat-divider>
+    <div class="content">
+        <div class="row">
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="pMenu" [matMenuTriggerData]="{name: 'Sally'}">Menu 1</button>
+            </div>
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="pMenu">Menu 2</button>
+            </div>
+            <div class="col-2">
+                <button mat-button [matMenuTriggerFor]="pMenu" [matMenuTriggerData]="{name: 'Peter'}">Menu 3</button>
+            </div>
+
+            <mat-menu #pMenu="matMenu">
+                <ng-template matMenuContent let-name="name">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item *ngIf="name">{{name}}</button>
+                    <button mat-menu-item>Item 3</button>
+                </ng-template>
+            </mat-menu>
+
+        </div>
+    </div>
+
+</div>

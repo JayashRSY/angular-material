@@ -1,0 +1,9 @@
+.container {
+    padding: 30px 60px 0px 60px;
+}
+
+.mat-button-toggle-checked {
+    background-color: #3f51b5;
+    color: #fff;
+}
+

@@ -1,0 +1,63 @@
+<div class="container">
+    <h1>Button Toggle</h1>
+    <mat-divider></mat-divider>
+</div>
+<div class="content">
+    <div class="row">
+        <div class="col-6">
+            <h2>Ex-1</h2>
+            <mat-button-toggle #singleToggle (click)="onSingleToggle(singleToggle)">{{singleToggle.checked?'Active':'Inactive'}}</mat-button-toggle>
+            {{ singleToggle.checked }}
+            <br>
+            <div *ngIf="singleToggle.checked">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos iusto et ipsam, dolor consequatur culpa temporibus sapiente ipsa distinctio nostrum.
+            </div>
+        </div>
+        <div class="col-6">
+            <h2>Ex-2</h2>
+            <mat-button-toggle-group #groupToggle="matButtonToggleGroup" (click)="onGroupToggle(groupToggle)">
+                <mat-button-toggle value="left"><mat-icon>format_align_left</mat-icon></mat-button-toggle>
+                <mat-button-toggle value="center"><mat-icon>format_align_center</mat-icon></mat-button-toggle>
+                <mat-button-toggle value="right"><mat-icon>format_align_right</mat-icon></mat-button-toggle>
+                <mat-button-toggle value="justify"><mat-icon>format_align_justify</mat-icon></mat-button-toggle>
+            </mat-button-toggle-group>
+            <div [style.text-align]="groupToggle.value">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sit saepe odit unde ad nihil consequatur quo, laborum alias modi?
+            </div>
+        </div>
+        <div class="col-6">
+            <h2>Ex-3</h2>
+            <mat-button-toggle-group #multiToggle="matButtonToggleGroup" multiple>
+                <mat-button-toggle value="html">HTML</mat-button-toggle>
+                <mat-button-toggle value="css">CSS</mat-button-toggle>
+                <mat-button-toggle value="javascript">JavaScript</mat-button-toggle>
+                <mat-button-toggle value="react">React</mat-button-toggle>
+            </mat-button-toggle-group>
+            <div>
+                {{multiToggle.value}}
+            </div>
+        </div>
+        <div class="col-6">
+            <h2>Ex-4 Template Driven Form</h2>
+            <mat-button-toggle-group [(ngModel)]="fontStyle">
+                <mat-button-toggle value="normal">Normal</mat-button-toggle>
+                <mat-button-toggle value="italic">Italic</mat-button-toggle>
+            </mat-button-toggle-group>
+            <div [style.font-style]="fontStyle">
+                {{fontStyle}}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus minus et, aut consequatur asperiores neque. Cum obcaecati excepturi neque vero.
+            </div>
+        </div>
+        <div class="col-6">
+            <h2>Ex-4 Reactive Form</h2>
+            <mat-button-toggle-group [formControl]="fontStyleControl">
+                <mat-button-toggle value="normal">Normal</mat-button-toggle>
+                <mat-button-toggle value="italic">Italic</mat-button-toggle>
+            </mat-button-toggle-group>
+            <div [style.font-style]="fontStyleControl.value">
+                {{fontStyleControl.value}}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus minus et, aut consequatur asperiores neque. Cum obcaecati excepturi neque vero.
+            </div>
+        </div>
+    </div>
+</div>
