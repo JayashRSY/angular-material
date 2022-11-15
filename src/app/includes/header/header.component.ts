@@ -22,7 +22,15 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogOut() {
-    this._du.openPrompt();
+    const data:any = {
+      title: 'Log Out',
+      text: 'Are you sure you want to log out?'
+    }
+    this._du.openPrompt(data).subscribe(res => {
+      if(res) {
+        console.log('logging out');
+      }
+    })
   }
 
 }

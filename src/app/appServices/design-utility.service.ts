@@ -10,8 +10,11 @@ export class DesignUtilityService {
 
   constructor(public dialog: MatDialog) { }
   //OPEN PROMPT
-  openPrompt() {
-    this.dialog.open(PromptComponent)
+  openPrompt(promptData: string) {
+    const dialogRef = this.dialog.open(PromptComponent, {
+      data: promptData
+    })
+    return dialogRef.afterClosed();
   }
 
   cartCount = new BehaviorSubject<number>(0);

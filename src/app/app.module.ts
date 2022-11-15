@@ -21,6 +21,8 @@ import { Dialog1Component } from './pages/dialog/dialog1/dialog1.component';
 import { Dialog2Component } from './pages/dialog/dialog2/dialog2.component';
 import { DesignUtilityModule } from './appModules/design-utility.module';
 import { Dialog3Component } from './pages/dialog/dialog3/dialog3.component';
+import { CardsComponent } from './pages/cards/cards.component';
+import { TooltipComponent } from './pages/tooltip/tooltip.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { Dialog3Component } from './pages/dialog/dialog3/dialog3.component';
     Dialog1Component,
     Dialog2Component,
     Dialog3Component,
+    CardsComponent,
+    TooltipComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,8 +19,16 @@ export class DialogComponent implements OnInit {
   }
 
   openDialog1() {
-    this.dialog.open(Dialog1Component);
+    this.dialog.open(Dialog1Component, {
+      // width: '500px',
+      // height: '400px',
+      // minWidth: '500px',
+      // minHeight: '400px',
+      // hasBackdrop: false
+      // disableClose: true
+    });
   }
+  //can set with height if want
   openDialog2() {
     const dialogRef = this.dialog.open(Dialog2Component)
     dialogRef.afterClosed().subscribe(res => {
@@ -42,8 +50,16 @@ export class DialogComponent implements OnInit {
     })
   }
 
+  promptTitle!: string
+  promptText!: string
   promptResult!:boolean
   openDialog4() {
-    this._du.openPrompt()
+    const data: any = {
+      title: this.promptTitle,
+      text: this.promptText
+    }
+    this._du.openPrompt(data).subscribe(res => {
+      this.promptResult = res;
+    })
   }
 }

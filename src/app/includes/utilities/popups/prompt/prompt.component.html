@@ -1,6 +1,6 @@
-<h1 mat-dialog-title>Are you sure?</h1>
+<h1 mat-dialog-title>{{data.title?data.title:'Are you sure?'}}</h1>
 <div mat-dialog-content>
-    <p>You want to take this action?</p>
+    <p>{{data.text?data.text:'Please confirm to proceed'}}</p>
 </div>
 <div mat-dialog-actions>
     <button mat-button mat-dialog-close>No Thanks</button>
